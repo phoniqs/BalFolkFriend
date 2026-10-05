@@ -1,0 +1,26 @@
+{
+  "name": "folkfriend",
+  "type": "module",
+  "collaborators": [
+    "Tom Wyllie <tom@wyllie.dev>"
+  ],
+  "description": "Transcription and recognition of traditional instrumental folk music",
+  "version": "1.1.4",
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TomWyllie/folkfriend"
+  },
+  "files": [
+    "folkfriend_bg.wasm",
+    "folkfriend.js",
+    "folkfriend_bg.js",
+    "folkfriend.d.ts"
+  ],
+  "main": "folkfriend.js",
+  "types": "folkfriend.d.ts",
+  "sideEffects": [
+    "./folkfriend.js",
+    "./snippets/*"
+  ]
+}
