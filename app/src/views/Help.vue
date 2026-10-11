@@ -1,21 +1,12 @@
 <template>
     <v-container>
-        <v-card
-            v-if="!isStableRelease"
-            class="pa-5 my-2 UnstableRelease"
-        >
-            <v-icon class="WarningIcon px-3">
-                {{ icons.alertCircle }}
-            </v-icon>
-            <span>You are not using the stable release version of FolkFriend, which is at <a href="https://folkfriend.app">folkfriend.app</a>. This is the development version, which may contain features which are untested.</span>
-        </v-card>
         <v-card class="pa-5 my-2">
             <h1>About</h1>
             <p>
-                FolkFriend listens to instrumental folk music, transcribes the
+                BalFolkFriend listens to instrumental folk music, transcribes the
                 melody to sheet music, and searches a database of traditional
                 tunes for matches. You may either use the microphone on your
-                device, or upload an existing audio file. FolkFriend runs
+                device, or upload an existing audio file. BalFolkFriend runs
                 entirely in browser and works without an internet connection.
             </p>
         </v-card>
@@ -25,14 +16,14 @@
         >
             <h1>Download</h1>
             <p>
-                FolkFriend is a "Web App", which means it installs onto your
+                BalFolkFriend is a "Web App", which means it installs onto your
                 Home Screen just like any other app.
             </p>
             <p
                 v-if="isPWA"
                 align="center"
             >
-                FolkFriend is installed <v-icon class="pb-1 Installed">
+                BalFolkFriend is installed <v-icon class="pb-1 Installed">
                     {{ icons.checkCircle }}
                 </v-icon>
             </p>
@@ -63,7 +54,7 @@
                     <li>
                         Tap <v-icon class="pb-1">
                             {{ icons.cellphoneArrowDown }}
-                        </v-icon> "Install FolkFriend"
+                        </v-icon> "Install BalFolkFriend"
                     </li>
                 </ul>
             </p>
@@ -78,7 +69,7 @@
                 </ul>
             </p>
             <p v-else>
-                To install FolkFriend, navigate to the settings of your browser
+                To install BalFolkFriend, navigate to the settings of your browser
                 and select "Add to Home Screen" or "Install App".
             </p>
         </v-card>
@@ -87,7 +78,7 @@
             class="pa-5 my-2"
         >
             <h1>Share</h1>
-            <p>Scan the QR code on another device to open FolkFriend.</p>
+            <p>Scan the QR code on another device to open BalFolkFriend.</p>
             <v-img
                 src="@/assets/qr-code.svg"
                 class="mx-auto QRCode"
@@ -98,23 +89,63 @@
         </v-card>
         <v-card class="pa-5 my-2">
             <h1>Feedback</h1>
-            FolkFriend has been a five-year project by a single developer. 
-            Please send any bugs reports, feature requests, or general feedback, 
-            to <a
-                class="feedbackEmail"
-                href="mailto:feedback@folkfriend.app"
-            >feedback@folkfriend.app</a>.
-            <!-- TODO donations -->
-            <!-- <h1>Donate</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque id tellus cursus, pellentesque tortor gravida,
-                sollicitudin nulla. Nulla sit amet tellus nulla.
-            </p> -->
+                BalFolkFriend is a fork of FolkFriend, maintained independently. Please
+                send bug reports, feature requests, or general feedback about
+                this version to <a
+                    class="feedbackEmail"
+                    href="mailto:arpagandekniga@gmail.com"
+                >arpagandekniga@gmail.com</a>.
+                Please do not contact the original author about problems with
+                this version.
+            </p>
+        </v-card>
+        <v-card class="pa-5 my-2">
+            <h1>Credits &amp; licence</h1>
+            <p>
+                BalFolkFriend is a <strong>modified version</strong> of
+                <a
+                    href="https://folkfriend.app"
+                    target="_blank"
+                    rel="noopener"
+                >FolkFriend</a> by Tom Wyllie
+                (<a
+                    href="https://github.com/TomWyllie/folkfriend"
+                    target="_blank"
+                    rel="noopener"
+                >source code</a>), released under the
+                <a
+                    href="https://www.gnu.org/licenses/gpl-3.0.html"
+                    target="_blank"
+                    rel="noopener"
+                >GNU General Public License v3</a>.
+                The recognition engine and app are his work; this version only
+                replaces the tune index and adapts the branding and some
+                screens.
+            </p>
+            <p>
+                The tune index is built from the <a href="https://baloche.onth.org" target="_blank" rel="noopener">Baloche</a> directory of traditional / balfolk scores; each tune links back to its Baloche page. Scores were converted automatically and may contain errors.
+            </p>
+            <p>
+                The source code of this modified version is available at
+                <a
+                    href="https://github.com/phoniqs/BalFolkFriend"
+                    target="_blank"
+                    rel="noopener"
+                >github.com/phoniqs/BalFolkFriend</a>.
+            </p>
+            <p>
+                If you enjoy this app, please consider
+                <a
+                    href="https://donorbox.org/help-support-development-of-folkfriend"
+                    target="_blank"
+                    rel="noopener"
+                >supporting the original FolkFriend developer</a>.
+            </p>
         </v-card>
         <p class="AppInfo">
             App version: {{ frontendVersion }}<br>Backend version:
-            {{ backendVersion }}<br>© 2021 Tom Wyllie. All Rights Reserved.
+            {{ backendVersion }}<br>FolkFriend © {{ currentYear }} Tom Wyllie · modified version · GPLv3
         </p>
     </v-container>
 </template>
@@ -126,7 +157,6 @@ import eventBus from '@/eventBus';
 import utils from '@/js/utils.js';
 
 import {
-    mdiAlertCircle,
     mdiCellphoneArrowDown,
     mdiCheckCircleOutline,
     mdiDotsVertical,
@@ -150,7 +180,6 @@ export default {
     },
     data: () => ({
         icons: {
-            alertCircle: mdiAlertCircle,
             iosShare: mdiExportVariant,
             iosAddToHomeScreen: mdiPlusBoxOutline,
             checkCircle: mdiCheckCircleOutline,
@@ -160,7 +189,7 @@ export default {
             cellphoneArrowDown: mdiCellphoneArrowDown,
             dotsVertical: mdiDotsVertical,
         },
-        isStableRelease: utils.isStableRelease(),
+        currentYear: new Date().getFullYear(),
         isPWA: utils.checkStandalone(),
     }),
     computed: {
@@ -212,18 +241,4 @@ export default {
     fill: var(--v-primary-darken1);
 }
 
-.UnstableRelease {
-    background: var(--v-secondary-lighten5);
-}
-
-.WarningIcon {
-    animation: blinker 1.5s linear infinite;
-    color: var(--v-secondary-base);
-}
-
-@keyframes blinker {
-    50% {
-        opacity: 0.2;
-    }
-}
 </style>

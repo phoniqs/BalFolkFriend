@@ -1,7 +1,0 @@
-{
-  "projects": {
-    "dev": "folkfriend-dev",
-    "prod": "folk-friend"
-  },
-  "targets": {}
-}

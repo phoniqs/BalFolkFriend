@@ -4,11 +4,11 @@
 
 *Identify balfolk tunes by playing or humming a few notes. About 4,100 tunes from the French-speaking balfolk repertoire.*
 
-Application web : https://balfolkfriend.netlify.app *(à adapter)*
+Application web : https://balfolkfriend.netlify.app
 
 ## Origine / Credits
 
-* **Moteur de reconnaissance et application** : fork de **FolkFriend**. Le code d'origine, sa licence (fichier `LICENSE`) et ses crédits sont conservés ; seuls l'index, le logo et quelques écrans ont été modifiés.
+* **Moteur de reconnaissance et application** : version modifiée de [**FolkFriend**](https://folkfriend.app) de Tom Wyllie ([code source d'origine](https://github.com/TomWyllie/folkfriend)), distribuée sous licence **GPLv3** comme l'original (fichier `LICENSE`). Le code d'origine, sa licence et ses crédits sont conservés ; seuls l'index, le logo, le nom et quelques écrans ont été modifiés. Les analytics de l'original ont été retirés.
 * **Partitions** : issues de [Baloche](https://baloche.onth.org), qui référence des partitions de musique traditionnelle hébergées sur de nombreux sites (par exemple `lediato.free.fr`, `partitions.bzh`, `diatonalpartitions.fr`, `ligue-auvergnate.com`). Chaque morceau de l'application renvoie vers sa fiche Baloche par le bouton **Source** ; les compositeurs sont indiqués quand la fiche les donne. Les partitions de l'index ont été **converties automatiquement** (ABC direct, MIDI, MuseScore, reconnaissance optique des PDF) et peuvent contenir des erreurs : les conversions approximatives sont marquées `needs\_review` dans le corpus d'origine.
 
 ## Retrait d'un morceau / Takedown

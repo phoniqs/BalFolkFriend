@@ -124,7 +124,4 @@ export default class utils {
         return (window.matchMedia('(display-mode: standalone)').matches);
     }
 
-    static isStableRelease() {
-        return /folkfriend.app/.test(window.location.href.toLowerCase());
-    }
 }
